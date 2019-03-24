@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <link rel="stylesheet" href="./css/paging.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="containet">
+    <ul id="pageMain">
+        <li>这是内容标题 第1</li>
+        <li>这是内容标题 第2</li>
+        <li>这是内容标题 第3</li>
+        <li>这是内容标题 第4</li>
+        <li>这是内容标题 第5</li>
+        <li>这是内容标题 第6</li>
+        <li>这是内容标题 第7</li>
+        <li>这是内容标题 第8</li>
+        <li>这是内容标题 第9</li>
+        <li>这是内容标题 第10</li>
+        <li>这是内容标题 第11</li>
+        <li>这是内容标题 第12</li>
+        <li>这是内容标题 第13</li>
+        <li>这是内容标题 第14</li>
+        <li>这是内容标题 第15</li>
+        <li>这是内容标题 第16</li>
+        <li>这是内容标题 第17</li>
+        <li>这是内容标题 第18</li>
+        <li>这是内容标题 第19</li>
+        <li>这是内容标题 第20</li>
+        <li>这是内容标题 第21</li>
+        <li>这是内容标题 第22</li>
+        <li>这是内容标题 第23</li>
+        <li>这是内容标题 第24</li>
+        <li>这是内容标题 第25</li>
+        <li>这是内容标题 第26</li>
+        <li>这是内容标题 第27</li>
+    </ul>
+</div>
+<div id="pageBox">
+    <span id="prev">上一页</span>
+    <ul id="pageNav"></ul>
+    <span id="next">下一页</span>
+</div>
+</body>
+</html>
+<script>
+   $(function () {
+       // 获取四个部分id
+       var $pageMain=$("#pageMain");
+       var $pageNav=$("#pageNav");
+       var $prev=$("#prev");
+       var $next=$("#next");
+       // 设置各种参数 (每页显示多少条，计算总页数，页码,当前索引值)
+       var curNum=6,
+           total=Math.ceil($pageMain.find("li").length/curNum),
+           pageNum="",
+           iNum=0
+       // console.log(total);
+
+      for(var i=0;i<total;i++){
+          pageNum+="<a href='javascript:;'>"+(i+1)+"</a>"
+      }
+      $pageNav.html(pageNum);
+       //每个标签页的第一个数字加高亮
+       $pageNav.find("a:first").addClass("active");
+
+       /*******标签页的点击事件*******/
+       $pageNav.find("a").each(function () {
+           $(this).click(function () {
+               $pageNav.find("a").removeClass("active");
+               $(this).addClass("active");
+               iNum=$(this).index();
+               $pageMain.find("li").hide();
+               // 分页显示的数据
+               for(var i=($(this).html()-1)*curNum;i<($(this).html())*curNum;i++){
+                   $pageMain.find("li").eq(i).show();
+               }
+           })
+       })
+       // 首页的显示
+       $pageMain.find("li").hide();
+       for(var i=0;i<curNum;i++){
+           $pageMain.find("li").eq(i).show()
+       }
+
+       //上一页
+       $prev.click(function () {
+           $pageMain.find("li").hide();
+           if (iNum==0){
+               for(var i=0;i<curNum;i++){
+                   $pageMain.find("li").eq(i).show()
+               }
+           }else{
+               $pageNav.find("a").removeClass("active");
+               iNum--;
+               $pageNav.find("a").eq(iNum).addClass("active")
+           }
+           for (var i = iNum * curNum; i < (iNum + 1) * curNum; i++) {
+               $pageMain.find("li").eq(i).show()
+           }
+       })
+       // 下一页
+   }) /*下一页*/
+   $pageNext.click(function () {
+       $pageMain.find("li").hide();
+       if (iNum == total - 1) {
+           alert('已经是最后一页');
+           for (var i = (total - 1) * curNum; i < total * curNum; i++) {
+               $(pageMain).find("li").eq(i).show()
+           }
+           return false;
+       } else {
+           pageNav.find("a").removeClass("active");
+           iNum++;
+           pageNav.find("a").eq(iNum).addClass("active");
+//                    ini(iNum);
+       }
+       for (var i = iNum * curNum; i < (iNum + 1) * curNum; i++) {
+           $pageMain.find("li").eq(i).show()
+       }
+   });
+</script>

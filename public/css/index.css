@@ -1,0 +1,275 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../imgs/wall.jpg") no-repeat;
+    background-size: cover;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.clearfix:after,.clearfix:before{
+    content:"";/*加一段内容*/
+    display:table;/*创建匿名的表格单元，触发bfc*/
+    clear:both;/*清除浮动*/
+    zoom:1;/*为IE6，7的兼容性设置*/
+}
+
+.content{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.content .main{
+    width: 95%;
+    margin: 0 auto;
+}
+/*头部*/
+.main header{
+    height: 160px;
+}
+.main header p{
+    margin-top: 110px;
+    height: 50px;
+}
+.main header p span{
+    font: normal 40px Cooper;
+}
+.main header p .search,.main header p .submit{
+    float: right;
+}
+.main header p .search{
+    display: block;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border: black 1px solid;
+    outline: none;
+    font: normal 15px "微软雅黑";
+    padding-left: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.main header p .submit{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #199ED8;
+    outline: none;
+    /*border: 1px solid #199ED8;*/
+    font: normal 15px "微软雅黑";
+    margin-top: 9px;
+}
+/*导航栏*/
+nav{
+    margin-top: 50px;
+
+}
+nav ul li{
+    float: left;
+    background-color:black;
+    width:19.8%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: white 1px solid;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font: normal 15px "Arial";
+}
+nav ul li a:hover{
+    color: red;
+}
+nav ul li:nth-child(3) ul,
+nav ul li:nth-child(4) ul,
+nav ul li:nth-child(5) ul{
+    opacity: 0.5;
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+nav ul li:nth-child(3) ul li,
+nav ul li:nth-child(4) ul li,
+nav ul li:nth-child(5) ul li{
+    width: 100%;
+    height: 40px;
+}
+
+/*主体内容*/
+section{
+    margin-top: 25px;
+}
+/*左边*/
+section .left{
+    float: left;
+    width: 30%;
+}
+section .left ul li{
+    border: 1px white solid;
+    width: 100%;
+}
+section .left ul .info{
+    width: 100%;
+    height: 330px;
+    background-color: black;
+}
+section .left .info img{
+    width: 300px;
+    height: 300px;
+    border: white 2px solid;
+    display: block;
+    border-radius:50%;
+    margin: 0 auto;
+    margin-top: 13px;
+    background: url("../imgs/me.jpg") ;
+    background-size: cover;
+}
+section .left .blogs{
+    margin-top: 50px;
+    border: white 1px solid;
+    width: 100%;
+    height: 480px;
+}
+section .left .blogs ul{
+    list-style: circle;
+    margin-left: 40px;
+}
+section .left .blogs ul li{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+}
+section .left .blogs ul li a{
+    text-decoration: none;
+    color: white;
+}
+section .left .blogs ul li a:hover{
+    color: red;
+}
+/*右边*/
+section article{
+    margin: 0;
+    float: right;
+    width: 65%;
+    height: 1500px;
+    background: rgb(196, 196, 196);
+}
+section article .cars,
+section article .new-article{
+    width: 95%;
+    margin: 0 auto;
+}
+section article .cars{
+    height: 400px;
+    overflow: hidden;
+    margin-top: 20px;
+    position: relative;
+    z-index: 0;
+}
+ .cars .photos{
+     position: relative;
+     width: 3200px;
+     left: 0px;
+}
+ .cars img{
+    height: 400px;
+    width: 800px;
+    float: left;
+}
+.cars .dots{
+    position: absolute;
+    bottom: 10px;
+    zoom: 2;
+    margin-left: 155px;
+}
+.cars .dots span{
+    float: left;
+    margin-left: 15px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border: 1px white solid;
+    border-radius: 50%;
+}
+.on{
+    background-color: red;
+}
+.cars a{
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 25px;
+    background-color: rgba(128,128,128,0.6);
+    position: absolute;
+    zoom: 2;
+    text-align: center;
+    top: 90px;
+    color: white;
+}
+.cars .prev{
+    left: 5px;
+}
+.cars .next{
+    right: 5px;
+}
+/*内容文章*/
+article{
+    border:solid 2px rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 1500px;
+    overflow: hidden;
+}
+article .new-article .article{
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: white;
+    border-bottom: white 1px solid;
+}
+.new-article .article h2{
+    padding-top: 25px;
+    padding-left: 50px;
+}
+.new-article .article img{
+    float: left;
+    display: block;
+    width: 30%;
+    height: 180px;
+    padding-left: 30px;
+}
+.new-article .article .introduce{
+    float: right;
+    width: 60%;
+    height: 160px;
+    padding-right: 30px;
+    margin-top: 0;
+}
+.new-article .article .more{
+    float: right;
+    width: 60%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #484848;
+    margin-right: 30px;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 52px;
+}
+.new-article .article .more a{
+    text-align: right;
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 15px;
+    position: relative;
+    bottom: 0px;
+}
+article .new-article .article .more a:hover{
+    color: red;
+}

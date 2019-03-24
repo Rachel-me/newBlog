@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)http://localhost:63342/htdocs/express_demo1/public/test.html?_ijt=vm5m2hi64srhlnthr5kfhoe36a -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>关于Rachel</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    标题 <input name="title">
+    内容 <input name="content">
+    <button class="submit">提交</button>
+</div>
+
+
+<script src="./关于Rachel_files/jquery-1.12.4.js.下载"></script>
+<script>
+$(".submit").click(function () {
+    console.log($("input[name='title']").val());
+    console.log($("input[name='content']").val());
+    $.post( "/writeData",{
+            title: $("input[name='title']").val(),
+            content: $("input[name='content']").val()
+        },
+        function(data){
+            alert(data)
+        }
+    )
+})
+
+</script>
+
+</body></html>

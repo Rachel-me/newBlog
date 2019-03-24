@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>阅读原文</title>
+    <link rel="stylesheet" href="css/discuss.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="content clearfix">
+    <!--头部-->
+    <header>
+        <p>
+            <span>Rachel的个人博客</span>
+            <input type="submit" value="搜索" class="submit">
+            <input type="search" placeholder="请输入要搜索的内容" class="search">
+        </p>
+    </header>
+    <!--主体内容-->
+    <div class="main">
+        <!--宽度96%，水平居中-->
+        <section class="clearfix">
+            <!--题目-->
+            <div class="top">
+                <p id="timu">文章题目</p>
+                <p><a href="study.html">回到学习进程</a></p>
+            </div>
+            <!--左侧栏-->
+            <aside class="left">
+                <article>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi earum eius eos error eum,
+                    explicabo id illum ipsa iure magnam nostrum omnis pariatur quam soluta suscipit totam ullam vitae?
+                </article>
+                <div class="article-discuss clearfix">
+                    <h3>评论</h3>
+                    <div class="words"></div>
+                    <div class="submit">畅言一下</div>
+                </div>
+                <div class="skip">
+                    <div class="skip-pre"><a href="">&lt;&lt;上一篇</a></div>
+                    <div class="skip-next"><a href="">下一篇&gt;&gt;</a></div>
+                </div>
+            </aside>
+            <!--右侧栏-->
+            <aside class="right">
+                <!--公告-->
+                <div class="notice clearfix">
+                    <img src="imgs/bar-code.jpg" alt="">
+                    <h3>公告</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aperiam beatae debitis,
+                        delectus labore laborum, libero maiores necessitatibus non odit officiis perspiciatis quaerat
+                        quas quibusdam recusandae tenetur vel. Ex, totam?</p>
+                </div>
+                <!--日历-->
+                <div class="calender clearfix">
+                    <h3>日历</h3>
+                    <div></div>
+                </div>
+                <!--最新评论与回复-->
+                <div class="new-discuss clearfix">
+                    <h3>最新评论与回复</h3>
+                    <p>没有更多了</p>
+                    <p>没有更多了</p>
+                </div>
+            </aside>
+        </section>
+    </div>
+</div>
+</body>
+
+<script>
+    $.post('/api/userData',{},function (data) {
+        data=JSON.parse(data)
+        $('#timu').html(data[0].id)
+    })
+</script>
+</html>

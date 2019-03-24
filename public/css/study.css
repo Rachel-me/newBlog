@@ -1,0 +1,160 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../imgs/wall.jpg") no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+}
+ul,p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.clearfix:after,.clearfix:before{
+    content:"";/*加一段内容*/
+    display:table;/*创建匿名的表格单元，触发bfc*/
+    clear:both;/*清除浮动*/
+    zoom:1;/*为IE6，7的兼容性设置*/
+}
+
+.content{
+    width: 80%;
+    margin: 0 auto;
+
+}
+.content .main{
+    width: 95%;
+    margin: 0 auto;
+}
+/*头部*/
+.main header{
+    height: 160px;
+}
+.main header p{
+    margin-top: 110px;
+    height: 50px;
+}
+.main header p span{
+    font: normal 40px Cooper;
+}
+.main header p .search,.main header p .submit{
+    float: right;
+}
+.main header p .search{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border: black 1px solid;
+    outline: none;
+    font: normal 15px "微软雅黑";
+    padding-left: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.main header p .submit{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #199ED8;
+    outline: none;
+    /*border: 1px solid #199ED8;*/
+    font: normal 15px "微软雅黑";
+    margin-top: 9px;
+}
+/*导航栏*/
+nav{
+    margin-top: 50px;
+
+}
+nav ul li{
+    float: left;
+    background-color:black;
+    width:19.8%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: white 1px solid;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font: normal 15px "Arial";
+}
+nav ul li a:hover{
+    color: red;
+}
+nav ul li:nth-child(3) ul,
+nav ul li:nth-child(4) ul,
+nav ul li:nth-child(5) ul{
+    opacity: 0.5;
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+nav ul li:nth-child(3) ul li,
+nav ul li:nth-child(4) ul li,
+nav ul li:nth-child(5) ul li{
+    width: 100%;
+    height: 40px;
+}
+.content .main hr{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 0 3px 3px #d9d9d9;
+}
+
+/*内容文章*/
+article{
+    margin-top: 60px;
+    border:solid 2px rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 1500px;
+    overflow: hidden;
+}
+article .article{
+    width: 95%;
+    height: 310px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: white;
+    border-bottom: white 1px solid;
+}
+article .article h2{
+    padding-top: 10px;
+    padding-left: 50px;
+}
+article .article div img{
+    float: left;
+    display: block;
+    width: 30%;
+    height: 200px;
+    padding-left: 30px;
+}
+article .article div .introduce{
+   float: right;
+    width: 60%;
+    height: 160px;
+    padding-right: 30px;
+    margin-top: 0;
+}
+article .article div .more{
+    float: right;
+    width: 55%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #484848;
+    margin-right: 83px;
+    box-sizing: border-box;
+}
+article .article div .more a{
+    text-align: right;
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 15px;
+}
+article .article div .more a:hover{
+    color: red;
+}

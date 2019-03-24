@@ -1,0 +1,217 @@
+body,p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding-bottom: 100px;
+    background: url("../imgs/wilds01.jpg") no-repeat ;
+    background-size: cover;
+}
+.clearfix:after,.clearfix:before{
+    content:"";/*加一段内容*/
+    display:table;/*创建匿名的表格单元，触发bfc*/
+    clear:both;/*清除浮动*/
+    zoom:1;/*为IE6，7的兼容性设置*/
+}
+a{
+    text-decoration: none;
+}
+.content header,
+.content .main{
+    width: 70%;
+    margin: 0 auto;
+}
+/*头部*/
+header{
+    height: 90px;
+}
+header p{
+    margin-top: 50px;
+    height: 50px;
+}
+header p span{
+    font: normal 40px Cooper;
+}
+header p .search,
+header p .submit{
+    float: right;
+}
+header p .search{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    border: black 1px solid;
+    outline: none;
+    font: normal 15px "微软雅黑";
+    padding-left: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+header p .submit{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: #199ED8;
+    outline: none;
+    /*border: 1px solid #199ED8;*/
+    font: normal 15px "微软雅黑";
+    margin-top: 9px;
+}
+/*主要内容*/
+.content .main{
+    background-color: rgb(255, 255, 255);
+    /*height: 1300px;*/
+    padding-bottom: 100px;
+}
+.main section{
+    width: 96%;
+    margin: 0 auto;
+}
+
+.main section .top{
+    width: 100%;
+    height: 60px;
+    margin-top: 50px;
+}
+.main .top p{
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid black;
+    background-color: #e7e7e7;
+}
+.main .top p:first-child{
+    float: left;
+    width: 40%;
+    text-align: left;
+    padding-left: 10px;
+}
+.main .top p:last-child{
+    float: right;
+    width: 20%;
+    background-color: white;
+    border-radius: 8px;
+    margin-right: 72px;
+    font: normal 18px "黑体";
+}
+.main .top p:last-child a{
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: black;
+}
+.main .top p:last-child a:hover{
+    color: red;
+}
+
+section .left,
+section .right{
+    margin-top: 20px;
+}
+/*左边*/
+section .left{
+    width: 63%;
+    height: 1180px;
+    float: left;
+}
+/*正文*/
+section .left article,
+section .left .article-discuss{
+    width: 100%;
+    background-color: gainsboro;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    box-sizing: border-box;
+}
+section .left article{
+    padding-top: 15px;
+    height: 750px;
+}
+section .left .article-discuss{
+    height: 280px;
+    margin-top: 40px;
+    border: none;
+}
+/*评论*/
+section .left .article-discuss h3{
+    margin: 10px 0 10px 0;
+}
+section .left .article-discuss .words{
+    width: 100%;
+    height: 180px;
+    border: orangered 2px dashed;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px 0 0 10px;
+    background-color: white;
+}
+section .left .article-discuss .submit{
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    border: orangered 1px dashed;
+    color: orangered;
+    margin-top: 10px;
+    margin-left: 550px;
+    text-align: center;
+}
+section .left .skip{
+    margin-top: 20px;
+}
+section .left .skip .skip-pre,
+section .left .skip .skip-next{
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    background-color: white;
+    width: 60%;
+    margin-top: 30px;
+    border-radius: 3px;
+}
+section .left .skip .skip-next{
+    margin-top: 15px;
+    text-align: right;
+    margin-left: 280px;
+    /*margin-bottom: 100px;*/
+}
+/*右侧栏*/
+section .right{
+    width: 33%;
+    height: 1180px;
+    float: right;
+    background-color: gainsboro;
+}
+section .right .notice,
+section .right .calender,
+section .right .new-discuss{
+    width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+section .right .notice{
+    height: 300px;
+
+}
+section .right .notice img{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    border: black 1px solid;
+    margin-top: 15px;
+}
+section .right .calender{
+    height: 350px;
+
+}
+section .right .new-discuss{
+    height: 350px;
+}

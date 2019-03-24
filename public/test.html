@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于Rachel</title>
+    <style>
+
+    </style>
+</head>
+<body>
+1.数据库插入数据
+<div id="app">
+    标题 <input class="title" >
+    内容 <input name="content" >
+    <button class="submit">提交</button>
+</div>
+2.form表单的get提交
+<form action="/submit" method="get">
+    名字：<input type="text" name="uname">
+    密码：<input type="password" name="pwd">
+    <button >提交</button>
+</form>
+3.数据库读取数据渲染到页面
+<div class="title"></div>
+<div class="content"></div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+    // 1.数据库插入数据
+$(".submit").click(function () {
+    $.post( "/api/writeData",{
+            title: $(".title").val(),
+            content: $("input[name='content']").val()
+        }
+    )
+})
+    //3.数据库读取数据渲染到页面
+   /* $.post('/api/userData', {data}, function (data) {
+        data = JSON.parse(data)
+        $(".div1").append(data.uname);
+        $(".div2").append(data.pwd)
+
+    })*/
+    /*function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }*/
+</script>
+

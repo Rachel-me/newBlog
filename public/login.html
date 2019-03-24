@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+</head>
+
+<body>
+    <form action="/api/login" method="post">
+        用户：<input type="text" name="user"> <br>
+        密码：<input type="text" name="pwd"><br>
+        <input type="submit" value="提交"><input type="reset" value="重置">
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        //dom完成时运行
+        $(document).ready(function () {
+            // // 在这里写你的代码...
+            var user = $("input[name='user']").val();
+            console.log(user)
+            var pwd = $("input[name='pwd']").val
+            console.log(pwd)
+            $.ajax({
+                type: "post",
+                url: "/api/login",
+                data: { user: url, pwd: pwd },
+                success: function (str) {
+                    var json = eval("('str')");
+                    if (json.ok) {
+                        window.location.href = "/public/index.html"
+                        console.log(json)
+                    } else {
+                        alert("登录失败")
+                    }
+                },
+                error: function () {
+                    alert("错误")
+                }
+            })
+        });
+
+    </script>
+</body>
+
+</html>

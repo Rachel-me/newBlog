@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<!--<form action="" method="post">-->
+    <input type="text" name="title">
+    <input type="text" name="content">
+    <input type="button" onclick="submit()" value="提交">
+<!--</form>-->
+</body>
+</html>
+<script>
+    // $("input[type='submit']").click(
+        function submit() {
+        // console.log($("input[name='title']").val());
+
+        var dataSet={
+           title: $("input[name='title']").val(),
+           content: $("input[name='content']").val(),
+        }
+
+        $.ajax({
+            type: "POST",//方法类型
+            // dataType: "json",//预期服务器返回的数据类型
+            url: "/api/writeData",//接口url
+            data: dataSet, //数据源
+            success: function (result) {
+                console.log(result);
+                //打印服务端返回的数据(调试用)
+                // if (result.resultCode == 200) {
+                //     alert("SUCCESS");
+                // }
+                // ;
+                alert(result)
+            },
+            error: function () {
+                alert("异常！");
+            }
+    })
+    }
+    // )
+</script>
